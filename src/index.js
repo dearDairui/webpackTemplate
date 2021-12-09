@@ -12,7 +12,7 @@ const domImg = document.createElement('img');
 domImg.src = img;
 document.body.append(domImg);
 
-// console.log(add(1, 2));
+// console.log(add(1, 2))
 
 function getString() {
   return new Promise((res) => {
