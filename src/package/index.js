@@ -1,3 +1,1 @@
-export const add =(a,b)=>{
-return a+b+3;
-}
+export const add = (a, b) => a + b + 3

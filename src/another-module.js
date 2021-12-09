@@ -1,2 +1,3 @@
-import _ from "loadsh"
-console.log(_.join([1,2,3]))
+import lodash from 'loadsh';
+
+console.log(lodash.join([1, 2, 3, 4]))
