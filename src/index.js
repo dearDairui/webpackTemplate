@@ -38,7 +38,7 @@ dom.addEventListener('click', () => {
 });
 
 if (module.hot) {
-   console.log('====>hotee');
+    console.log('====>hotee');
   module.hot.accept('./another-module.js', () => {
     console.log(' file change');
   });
