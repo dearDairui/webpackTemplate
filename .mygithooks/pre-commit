@@ -1,2 +1,2 @@
-echo pre-commit 
+echo pre-commit-from-my 
 npx eslint ./src
