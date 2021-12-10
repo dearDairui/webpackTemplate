@@ -38,9 +38,9 @@ dom.addEventListener('click', () => {
 });
 
 if (module.hot) {
-  console.log('====>hotee');
+   console.log('====>hotee');
   module.hot.accept('./another-module.js', () => {
     console.log(' file change');
   });
 }
-// 天府2街复城国际T1 9lou
+// 天府2街复城国际T1 9lo
