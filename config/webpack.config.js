@@ -11,7 +11,7 @@ module.exports = (env) => {
 
     case env.developement:
       return merge(commonConfig, preConfig)
- 
+
     default:
       return new Error('no match schame')
   }

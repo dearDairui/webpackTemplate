@@ -1,4 +1,8 @@
 .hello{
     color:red;
     background: url('./logo512.png');
+    display: flex;
+    button{
+        background: red;
+    }
 }

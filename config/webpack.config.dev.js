@@ -1,5 +1,6 @@
-module.exports = {
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
+module.exports = {
   output: {
     filename: 'buildFile/[name].bundle.js',
     publicPath: '/',
@@ -36,4 +37,5 @@ module.exports = {
     //     requestCert:true
     // }
   },
+  // plugins: [new BundleAnalyzerPlugin()],
 }

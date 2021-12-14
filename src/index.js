@@ -1,4 +1,5 @@
 // import { add } from './package/index';
+import $ from 'jquery';
 import img from './assets/logo512.png';
 import txt from './assets/1.txt';
 import './assets/1.css';
@@ -6,6 +7,7 @@ import './assets/1.less';
 import data from './assets/da.xml';
 import './async.js';
 
+console.log($)
 console.log(img, txt, data);
 const domImg = document.createElement('img');
 

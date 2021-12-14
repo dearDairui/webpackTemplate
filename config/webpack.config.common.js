@@ -3,7 +3,6 @@ const HtmlWebapckPlugin = require('html-webpack-plugin')
 const MiniCss = require('mini-css-extract-plugin')
 
 module.exports = {
-
   entry: {
     // index:{
     //     import:path.resolve('./src/index.js'),
@@ -62,7 +61,7 @@ module.exports = {
       // },
       {
         test: /\.(css|less)$/,
-        use: [MiniCss.loader, 'css-loader', 'less-loader'],
+        use: [MiniCss.loader, 'css-loader', 'less-loader', 'postcss-loader'],
       },
       // 其他文件类型 csv-loader xml-loader
       {
@@ -104,9 +103,11 @@ module.exports = {
       filename: 'style/[contenthash].css',
     }),
   ],
-
+  externalsType: 'script',
   externals: {
     lodash: 'lodash',
+    // jquery: 'jQuery',
+    jquery: ['https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js', 'jQuery'],
   },
   optimization: {
 
@@ -121,5 +122,11 @@ module.exports = {
         },
       },
     },
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+    extensions: ['.json', '.js', '.vue'],
   },
 }
