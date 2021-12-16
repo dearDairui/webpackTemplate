@@ -1,4 +1,3 @@
-// import { add } from './package/index';
 import $ from 'jquery';
 import img from './assets/logo512.png';
 import txt from './assets/1.txt';
@@ -6,28 +5,14 @@ import './assets/1.css';
 import './assets/1.less';
 import data from './assets/da.xml';
 import './async.js';
+import './app.ts';
 
-console.log($)
+console.dir($)
 console.log(img, txt, data);
 const domImg = document.createElement('img');
 
 domImg.src = img;
 document.body.append(domImg);
-
-// console.log(add(1, 2))
-
-function getString() {
-  return new Promise((res) => {
-    setTimeout(() => {
-      res('hello');
-    }, 1000);
-  });
-}
-async function gets() {
-  const str = await getString();
-  console.log(str);
-}
-gets();
 
 const dom = document.createElement('button');
 dom.innerHTML = 'buttonAsync';
@@ -45,4 +30,9 @@ if (module.hot) {
     console.log(' file change');
   });
 }
-// 天府2街复城国际T1 9lo
+// works 使用
+const work = new Worker(new URL('./work.js', import.meta.url))
+work.postMessage('hello works')
+work.onmessage = (msg) => {
+  console.log(msg)
+};

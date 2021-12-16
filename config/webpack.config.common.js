@@ -12,7 +12,7 @@ module.exports = {
     //     import:path.resolve('./src/another-module.js'),
     //     dependOn:"shard"
     // },
-    // shard:'loadsh'
+    // shard: 'loadsh',
     index: path.resolve('./src/index.js'),
     another: path.resolve('./src/another-module.js'),
   },
@@ -87,14 +87,22 @@ module.exports = {
           },
         }, 'eslint-loader'],
       },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: 'ts-loader',
+      },
     ],
   },
   plugins: [
+    // 这里可以配置多个HtmlWebapckPlugin
     new HtmlWebapckPlugin({
       template: './index.html',
       filename: 'index.html',
-      inject: true,
+      inject: true, // 'body'
+      title: 'demo',
       hash: true,
+      // chunks: ['main', 'another'],
       cdn: {
         js: ['https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.js'],
       },
@@ -105,7 +113,7 @@ module.exports = {
   ],
   externalsType: 'script',
   externals: {
-    lodash: 'lodash',
+    // lodash: 'lodash',
     // jquery: 'jQuery',
     jquery: ['https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js', 'jQuery'],
   },
@@ -127,6 +135,6 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
-    extensions: ['.json', '.js', '.vue'],
+    extensions: ['.json', '.js', '.ts', '.vue'],
   },
 }

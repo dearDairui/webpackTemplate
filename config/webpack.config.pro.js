@@ -13,12 +13,15 @@ module.exports = {
   mode: 'production',
 
   optimization: {
+    minimize: true,
     // 要配合使用mode:production使用
     minimizer: [
       // css压缩
       new CssMini(),
       // js代码压缩
-      new TerserPlugin(),
+      new TerserPlugin({
+        exclude: /\/node_modules/,
+      }),
     ],
 
   },

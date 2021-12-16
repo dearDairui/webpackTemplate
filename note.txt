@@ -1,0 +1,16 @@
+1. webpack --stats detailed 查看打包信息
+2. webpack --watch 文件变化监测打包
+3. 配置githooks
+    git config core.hooksPath .mygethooks  
+    chmod +x ./pre-commit
+4. husky
+    npm i husky -D 
+    npx husky install 
+    然后在script中添加   "prepare": "husky install"
+    然后在.husky文件夹下创建pre-commit  :
+        echo husky
+        npx eslint ./src  
+5. TS 
+    1. npm i ts-loader typescript -D 
+    2. npx tsc --init
+6. sideEffects:['*.css']          
