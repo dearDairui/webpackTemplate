@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log(4),"serviceWorker"in navigator&&window.addEventListener("load",(()=>{navigator.serviceWorker.register("./service-worker.js").then((e=>{console.log("sw res",e)})).catch((e=>{console.error(e)}))}))})();
